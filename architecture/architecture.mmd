@@ -1,0 +1,9 @@
+flowchart LR
+    S3["Amazon S3<br/>Vehicle / IoT JSON"] --> ADF["Azure Data Factory<br/>Ingestion pipeline"]
+    ADF --> Landing["ADLS Gen2<br/>Landing"]
+    Landing --> Function["Azure Function<br/>Blob trigger + JSON parse"]
+    Function -->|Valid JSON| Staging["ADLS Gen2<br/>Staging"]
+    Function -->|Invalid JSON| Rejected["ADLS Gen2<br/>Rejected"]
+    Staging --> SQL["Azure SQL Database<br/>Downstream loading"]
+    ADF -.-> Monitor["ADF Monitor / Run history"]
+    Function -.-> Logs["Function logs"]

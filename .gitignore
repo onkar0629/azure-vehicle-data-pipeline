@@ -1,0 +1,33 @@
+# Node dependencies and build output
+node_modules/
+npm-debug.log*
+*.tgz
+dist/
+build/
+
+# Local Azure settings may contain secrets
+local.settings.json
+.settings/
+.azure/
+
+# Environment / credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+credentials/
+
+# Local editor / OS files
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
+Thumbs.db
+
+# Logs / test output
+*.log
+coverage/
+test-results/

@@ -1,0 +1,13 @@
+{
+  "name": "azure-vehicle-data-pipeline-function",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Course-inspired Azure Function for validating vehicle JSON blobs.",
+  "main": "blob-trigger/index.js",
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "test": "node --test"
+  }
+}
